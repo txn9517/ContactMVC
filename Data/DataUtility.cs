@@ -48,12 +48,15 @@ namespace ContactMVC.Data
 
         public static async Task ManageDataAsync(IServiceProvider svcProvider)
         {
+            // obtaining necessary services based on the IServiceProvider parameter
             var dbContextSvc = svcProvider.GetRequiredService<ApplicationDbContext>();
             var userManagerSvc = svcProvider.GetRequiredService<UserManager<AppUser>>();
 
+            // align db by checking Migrations
             await dbContextSvc.Database.MigrateAsync();
 
             // seed demo user
+            await SeedDemoUserAsync(userManagerSvc);
 
         }
 
@@ -61,8 +64,8 @@ namespace ContactMVC.Data
         {
             AppUser demoUser = new AppUser()
             {
-                UserName = "demologin@contactpro.com",
-                Email = "demologin@contactpro.com",
+                UserName = "demologin@contactdex.com",
+                Email = "demologin@contactdex.com",
                 FirstName = "Demo",
                 LastName = "Login",
                 EmailConfirmed = true
@@ -74,7 +77,7 @@ namespace ContactMVC.Data
 
                 if (user == null)
                 {
-                    await userManager.CreateAsync(demoUser, "Abc&123!");
+                    await userManager.CreateAsync(demoUser, "Abc@123!");
                 }
 
             } catch (Exception ex)
