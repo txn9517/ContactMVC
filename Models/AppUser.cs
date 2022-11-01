@@ -19,8 +19,12 @@ namespace ContactMVC.Models
         [NotMapped]
         public string? FullName { get { return $"{FirstName} {LastName}"; } }
 
-        // TODO: make relationship to Contact model
 
+
+        // TODO: make relationship to Contact model
+        public virtual ICollection<Contact> Contacts { get; set; } = new HashSet<Contact>();
         // TODO: make relationship to Category model
+        public virtual ICollection<Category> Categories { get; set; } = new HashSet<Category>();
+        
     }
 }

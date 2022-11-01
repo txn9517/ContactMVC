@@ -1,8 +1,54 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "My Contact Dex";
+    Layout = "~/Views/Shared/_LayoutLanding.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <div class="ms-5">
+            <h1 class="heroTitle">Your Go-To <span class="textHighlight">Contacts</span> Dex</h1>
+            <div class="subTitle">
+                The Contacts Book you can't live without.
+                A place to store all of your loved ones contact information.
+                Start populating your very own Dex today!
+                <br />
+                <br />
+                <strong>Built with pride using today's popular tech:</strong>
+                <br />
+                <!--
+                <i class="devicon-dot-net-plain-wordmark colored devicons"></i>
+                <i class="devicon-csharp-plain-wordmark colored devicons"></i>
+                <i class="devicon-postgresql-plain-wordmark colored devicons"></i>
+                <i class="devicon-bootstrap-plain-wordmark colored devicons"></i>
+                -->
+
+                <div class="d-flex align-items-center">
+                    <figure>
+                        <img src="https://devicons.railway.app/i/dot-net.svg" class="imgIcon" />
+                        <figcaption>ASP.NET</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="https://devicons.railway.app/i/csharp.svg" class="imgIcon" />
+                        <figcaption>C#</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="https://devicons.railway.app/i/postgresql.svg" class="imgIcon" />
+                        <figcaption>Postgres</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="https://devicons.railway.app/i/bootstrap.svg" class="imgIcon" />
+                        <figcaption>Bootstrap</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="https://devicons.railway.app/i/railway-dark.svg" class="imgIcon" />
+                        <figcaption>Railway</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 order-first order-md-last">
+        @*image*@
+        <img src="~/img/undraw_books_re_8gea.svg" class="img-fluid" />
+    </div>
 </div>

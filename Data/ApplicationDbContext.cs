@@ -10,5 +10,10 @@ namespace ContactMVC.Data
             : base(options)
         {
         }
+
+        // interact with database
+        public virtual DbSet<Contact> Contacts { get; set; } = default!;
+
+        public virtual DbSet<Category> Categories { get; set; } = default!;
     }
 }

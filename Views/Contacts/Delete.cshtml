@@ -1,0 +1,42 @@
+﻿@model ContactMVC.Models.Contact
+@using ContactMVC.Services.Interfaces
+@inject IImageService ImageService
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="row">
+    <div class="col-12 col-md-8 offset-md-2">
+        <h2>Are you sure?</h2>
+        <p class="text-lead text-muted">This contact will be permanently deleted.</p>
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4 square-img-container">
+                    <img src="@ImageService.ConvertByteArrayToFile(@Model.ImageData!, @Model.ImageType!)" class="square-img rounded-start" alt="contact picture">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">@Model.FullName</h5>
+                        <address class="card-text">
+                            @Model.Address1<br>
+                            @Model.Address2
+                            @Model.City, @Model.State @Model.ZipCode
+                        </address>
+                        <div class="card-text">
+                            <span class="fw-bold me-2">Phone:</span>@Model.PhoneNumber
+                        </div>
+                        <div class="card-text">
+                            <span class="fw-bold me-2">Email:</span>@Model.Email
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form class="d-flex justify-content-between" asp-action="Delete" asp-route-id="@Model.Id">
+            <input hidden asp-for="Id" />
+            <a asp-action="Index" asp-controller="Contacts" class="btn btn-outline-secondary rounded-pill btnLink">Cancel</a>
+            <button type="submit" class="btn btn-danger rounded-pill btnLink">Delete</button>
+        </form>
+    </div>
+</div>
