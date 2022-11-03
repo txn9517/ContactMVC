@@ -1,6 +1,7 @@
 ﻿@model ContactMVC.Models.EmailContactViewModel
 
 @{
+    ViewData["Title"] = "Email Contact";
 }
 
 <div class="card">
@@ -20,7 +21,7 @@
                 </div>
                 <div class="col">
                     <label asp-for="@Model.EmailData!.EmailBody" class="form-label">Message:</label>
-                    <textarea class="form-control" required asp-for="@Model.EmailData!.EmailBody"></textarea>
+                    <textarea class="form-control" rows=10 asp-for="@Model.EmailData!.EmailBody" required></textarea>
                 </div>
             </div>
         </div>
